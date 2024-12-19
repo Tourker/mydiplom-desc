@@ -651,3 +651,5 @@ apply:
 [Ссылка на развернутое приложение](http://130.193.56.59)
 
 [Ссылка на GRAFANA](http://130.193.56.59:3000) - admin/prom-operator
+
+[Ссылка на Registry dockerhub](https://hub.docker.com/repository/docker/tourk/diplom-app/general)
