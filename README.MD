@@ -168,7 +168,7 @@ cloud_id="$(yc config list | grep 'cloud-id' | awk '{print $2}')"
 #Добавление роли сервис аккаунту
 yc resource-manager folder add-access-binding $folder_id --role editor --subject serviceAccount:$sa_id
 
-#Создание iam-ключей статический ключ доступа и ключа для доступа к облаку с записью в файлы
+#Создание iam-ключей: статический ключ доступа и ключ для доступа к облаку с записью в файлы
 yc iam access-key create --service-account-id $sa_id --format json > ./access-key.json
 yc iam key create --service-account-id $sa_id --folder-id $folder_id --output key.json
 
@@ -201,9 +201,9 @@ export TF_VAR_token="**********************************"
 
 ![Cкриншот](https://github.com/Tourker/mydiplom-desc/blob/main/img/cloud/1.jpg)
 
-Инициализация бэкенда из бакета
+Инициализация бэкенда из бакета:
 
-Добавил в provider.tf блок backend для инициалазции в бакете
+Добавил в providers.tf блок backend для инициалазции в бакете
 
 ```
 backend "s3" {
@@ -230,7 +230,7 @@ backend "s3" {
 
 ![Cкриншот](https://github.com/Tourker/mydiplom-desc/blob/main/img/cloud/3.jpg)
 
-3. Создаем VPC в разных зонах доступности
+3. Создаем VPC в разных зонах доступности:
 
 [network.tf](https://github.com/Tourker/mydiplom-IAC/blob/main/network.tf)
 
@@ -303,7 +303,7 @@ ansible-playbook -i inventory/hosts.yml kube-conf.yaml
 
 ### Создаем тестовое приложение
 
-1. Создаем Dockerfile для сборки нашего приложения - одностраничного сайта в nginx 
+1. Создаем Dockerfile для сборки нашего приложения - одностраничного сайта в nginx: 
 
 Dockerfile:
 
@@ -317,17 +317,17 @@ CMD ["nginx", "-g", "daemon off;"]
 
 ![Cкриншот](https://github.com/Tourker/mydiplom-desc/blob/main/img/App/1.jpg)
 
-3. Проверяем в registry dockerhub
+3. Проверяем в registry dockerhub:
 
 ![Cкриншот](https://github.com/Tourker/mydiplom-desc/blob/main/img/App/2.jpg)
 
 ### Подготавливаем cистему мониторинга и деплой приложения
 
-1. Систему мониторинга prometheus + grafana будем устанавливать с помощью helm chart - kube-promtheus-stack
+1. Систему мониторинга prometheus + grafana будем устанавливать с помощью helm chart - kube-promtheus-stack:
 
-Для этого вначале добавляем helm-репозиторий и устанавливаем helm chart в namespace - monitoring. Далее создаем NetworkPolicy и Service с типо NodePort для внешнего проброса через loadbalancer, созданный ранее при конфигурировании инфраструктуры.
+Для этого сначало добавляем helm-репозиторий и устанавливаем helm chart в namespace - monitoring. Далее создаем NetworkPolicy и Service для grafana с типом NodePort для внешнего проброса через балансировщик нагрузки, созданный ранее при конфигурировании инфраструктуры.
 
-Сылка на grafana.yaml
+[grafana.yaml](https://github.com/Tourker/mydiplom-app/blob/main/gitlab_ci/grafana.yaml)
 
 ![Cкриншот](https://github.com/Tourker/mydiplom-desc/blob/main/img/monitoring/1.jpg)
 
@@ -483,7 +483,7 @@ helm upgrade --install agent gitlab/gitlab-agent \
 
 ![Cкриншот](https://github.com/Tourker/mydiplom-desc/blob/main/img/CICD/app/6.jpg)
 
-3) Проверяем коннет агента в gitlab:
+3) Проверяем, что агент законнекчен в gitlab:
 
 ![Cкриншот](https://github.com/Tourker/mydiplom-desc/blob/main/img/CICD/app/7.jpg)
 
@@ -530,6 +530,10 @@ deploy:
 ```
 
 ![Cкриншот](https://github.com/Tourker/mydiplom-desc/blob/main/img/CICD/app/9.jpg)
+
+Модифицированный app.yaml для pipeline:
+
+[app.yaml](https://github.com/Tourker/mydiplom-app/blob/main/gitlab_ci/app/app.yaml)
 
 3) Проверяем работу:
 
@@ -628,7 +632,7 @@ apply:
 
 ![Cкриншот](https://github.com/Tourker/mydiplom-desc/blob/main/img/CICD/terraform/7.jpg)
 
-Проверим запуск pipeline на изменении в инфраструктуре. Для теста добавим в файл networks.tf еще одну подсеть и посмотрим как отрабатывается pipeline:
+Проверим запуск pipeline на изменении в инфраструктуре. Для теста добавим в файл network.tf еще одну подсеть и посмотрим как отрабатывается pipeline:
 
 ![Cкриншот](https://github.com/Tourker/mydiplom-desc/blob/main/img/CICD/terraform/8.jpg)
 
