@@ -301,7 +301,7 @@ ansible-playbook -i inventory/hosts.yml kube-conf.yaml
 
 ![Cкриншот](https://github.com/Tourker/mydiplom-desc/blob/main/img/cluster/5.jpg)
 
-### Создание тестового приложения
+### Создаем тестовое приложение
 
 1. Создаем Dockerfile для сборки нашего приложения - одностраничного сайта в nginx 
 
