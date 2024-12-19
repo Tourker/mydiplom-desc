@@ -638,7 +638,7 @@ apply:
 
 ### Репозитории 
 
-[Репозиторий с описание работы](https://github.com/Tourker/mydiplom-desc)
+[Репозиторий с описанием работы](https://github.com/Tourker/mydiplom-desc)
 
 [Репозиторий с приложением, манифестами и пайплайнами](https://github.com/Tourker/mydiplom-app)
 
