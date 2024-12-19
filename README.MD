@@ -331,7 +331,12 @@ CMD ["nginx", "-g", "daemon off;"]
 
 ![Cкриншот](https://github.com/Tourker/mydiplom-desc/blob/main/img/monitoring/1.jpg)
 
-Заходим через IP-адресс loadbalancer указывая порт 3000 и заходим в Dashboard/General/Kubernetes/Compute Resources/Cluster
+Заходим через IP-адресс loadbalancer указывая порт 3000
+
+Login: admin
+Password: prom-operator
+
+Далее переходим в Dashboard/General/Kubernetes/Compute Resources/Cluster
 
 ![Cкриншот](https://github.com/Tourker/mydiplom-desc/blob/main/img/monitoring/2.jpg)
 
@@ -408,9 +413,6 @@ spec:
 ![Cкриншот](https://github.com/Tourker/mydiplom-desc/blob/main/img/monitoring/3.jpg)
 
 Заходим по IP-адресу на стандартном порту 80:
-
-Login: admin
-Password: prom-operator
 
 ![Cкриншот](https://github.com/Tourker/mydiplom-desc/blob/main/img/monitoring/4.jpg)
 
