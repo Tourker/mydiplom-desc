@@ -438,6 +438,7 @@ spec:
 ![Cкриншот](https://github.com/Tourker/mydiplom-desc/blob/main/img/CICD/app/3.jpg)
 
 4. Для работы в gitlab ci нам необходимо создать и законнектить gitlab-runner, выдать права rbac и задеплоить его в кластер. Для этих целей будем использовать helm chart:
+
 1) Добавляем репозиторий и обновляем:
 
 ```
