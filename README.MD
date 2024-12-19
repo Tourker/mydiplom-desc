@@ -321,7 +321,7 @@ CMD ["nginx", "-g", "daemon off;"]
 
 ![Cкриншот](https://github.com/Tourker/mydiplom-desc/blob/main/img/App/2.jpg)
 
-### Подготовка cистемы мониторинга и деплой приложения
+### Подготавливаем cистему мониторинга и деплой приложения
 
 1. Систему мониторинга prometheus + grafana будем устанавливать с помощью helm chart - kube-promtheus-stack
 
@@ -421,7 +421,7 @@ spec:
 ![Cкриншот](https://github.com/Tourker/mydiplom-desc/blob/main/img/monitoring/5.jpg)
 
 
-### Установка и настройка CI/CD
+### Устанавливаем и настраиваем CI/CD
 
 Для построения CI/CD pipeline воспользуемся сервисом Managed Service for GitLab
 
